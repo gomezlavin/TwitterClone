@@ -106,15 +106,15 @@
                                                         <constraint firstAttribute="height" constant="16" id="UHz-GM-Cz5"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yxA-PL-HDb">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reply" translatesAutoresizingMaskIntoConstraints="NO" id="yxA-PL-HDb">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="16" id="BQy-4p-eHZ"/>
+                                                        <constraint firstAttribute="width" constant="25" id="BQy-4p-eHZ"/>
                                                         <constraint firstAttribute="height" constant="16" id="ORa-kP-xEf"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bI9-y3-cfn">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="retweet" translatesAutoresizingMaskIntoConstraints="NO" id="bI9-y3-cfn">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="16" id="HGH-Zj-5Cp"/>
+                                                        <constraint firstAttribute="width" constant="25" id="HGH-Zj-5Cp"/>
                                                         <constraint firstAttribute="height" constant="16" id="L28-Gr-Uha"/>
                                                     </constraints>
                                                 </imageView>
@@ -138,10 +138,10 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fcj-u3-Ls9">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like" translatesAutoresizingMaskIntoConstraints="NO" id="Fcj-u3-Ls9">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="pvn-Nf-7Cq"/>
-                                                        <constraint firstAttribute="width" constant="16" id="t4V-Cx-PlL"/>
+                                                        <constraint firstAttribute="width" constant="25" id="t4V-Cx-PlL"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCl-Zj-WKR">
@@ -166,14 +166,14 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="bI9-y3-cfn" firstAttribute="leading" secondItem="yxA-PL-HDb" secondAttribute="trailing" constant="50" id="3mm-1v-60m"/>
+                                                <constraint firstItem="bI9-y3-cfn" firstAttribute="leading" secondItem="yxA-PL-HDb" secondAttribute="trailing" constant="55" id="3mm-1v-60m"/>
                                                 <constraint firstItem="yxA-PL-HDb" firstAttribute="top" secondItem="WN1-By-ogf" secondAttribute="bottom" constant="8" id="4KP-1j-OCF"/>
                                                 <constraint firstItem="WN1-By-ogf" firstAttribute="top" secondItem="r1a-mk-ght" secondAttribute="bottom" constant="2" id="5PT-GL-rmN"/>
                                                 <constraint firstItem="yYN-pX-phf" firstAttribute="top" secondItem="oU4-HE-PFv" secondAttribute="top" constant="2" id="BA1-wi-cZg"/>
                                                 <constraint firstItem="vtY-B7-xkk" firstAttribute="leading" secondItem="bI9-y3-cfn" secondAttribute="trailing" constant="4" id="BAy-TI-nrn"/>
                                                 <constraint firstItem="vtY-B7-xkk" firstAttribute="centerY" secondItem="yxA-PL-HDb" secondAttribute="centerY" id="C5o-Ud-Lqz"/>
                                                 <constraint firstItem="Fcj-u3-Ls9" firstAttribute="centerY" secondItem="yxA-PL-HDb" secondAttribute="centerY" id="Dto-w5-ydr"/>
-                                                <constraint firstItem="Fcj-u3-Ls9" firstAttribute="leading" secondItem="bI9-y3-cfn" secondAttribute="trailing" constant="50" id="HQX-c0-A1g"/>
+                                                <constraint firstItem="Fcj-u3-Ls9" firstAttribute="leading" secondItem="bI9-y3-cfn" secondAttribute="trailing" constant="55" id="HQX-c0-A1g"/>
                                                 <constraint firstItem="mCl-Zj-WKR" firstAttribute="centerY" secondItem="yxA-PL-HDb" secondAttribute="centerY" id="IEO-Rh-dxt"/>
                                                 <constraint firstItem="6aQ-Hd-osd" firstAttribute="leading" secondItem="TRn-BU-pz1" secondAttribute="trailing" constant="5" id="IxG-uz-upx"/>
                                                 <constraint firstItem="r1a-mk-ght" firstAttribute="top" secondItem="OY8-YD-67c" secondAttribute="top" id="KqE-MI-4En"/>
@@ -238,7 +238,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="like" width="78" height="52"/>
         <image name="logo" width="738" height="600"/>
+        <image name="reply" width="80" height="52"/>
+        <image name="retweet" width="82" height="52"/>
         <image name="word" width="1804" height="429"/>
     </resources>
 </document>
