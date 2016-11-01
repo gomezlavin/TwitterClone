@@ -26,7 +26,6 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         
         let logo = UIImage(named: "logo_white.png")
         let imageView = UIImageView(image:logo)
-//        imageView.frame = CGRect(x: 0, y: 0, width: 39, height: 32)
         self.navigationItem.titleView = imageView
         TwitterClient.sharedInstance?.homeTimeline(success: { (tweets: [Tweet]) in
             self.tweets = tweets
@@ -49,11 +48,6 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tweets!.count
-//        if (tweets != nil) {
-//            return tweets!.count
-//        } else {
-//            return 0
-//        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -75,14 +69,15 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         })
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == nil {
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPath(for: cell)
+            let tweet = tweets![indexPath!.row]
+            
+            let readTweetViewController = segue.destination as! ReadTweetViewController
+            readTweetViewController.tweet = tweet
+        }
     }
-    */
 
 }

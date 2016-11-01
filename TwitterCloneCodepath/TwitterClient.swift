@@ -73,5 +73,44 @@ class TwitterClient: BDBOAuth1SessionManager {
             failure(error)
         })
     }
-
+    
+    func statusUpdate(status: String, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
+        let endpoint = "1.1/statuses/update.json"
+        let originalStatuts = status
+        let escapedStatus = originalStatuts.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        let parametersString = "\(endpoint)?status=\(escapedStatus!)"
+        
+        post(parametersString, parameters: nil, progress: nil, success: { (task: URLSessionTask?, response: Any?) in
+            success()
+        }, failure: { (task: URLSessionDataTask?, error: Error) in
+            failure(error)
+        })
+    }
+    
+    func retweet(id: String, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
+        let endpoint = "1.1/statuses/retweet/\(id).json"
+        
+        post(endpoint, parameters: nil, progress: nil, success: { (task: URLSessionTask?, response: Any?) in
+            let tweetDictionary = response as! NSDictionary
+            print(tweetDictionary["retweeted"]!)
+            success()
+        }, failure: { (task: URLSessionDataTask?, error: Error) in
+            failure(error)
+        })
+    }
+    
+    func favorite(id: String, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
+        let endpoint = "1.1/favorites/create.json?id=\(id)"
+        
+        post(endpoint, parameters: nil, progress: nil, success: { (task: URLSessionTask?, response: Any?) in
+            let tweetDictionary = response as! NSDictionary
+            print(tweetDictionary["favorited"]!)
+            success()
+            }, failure: { (task: URLSessionDataTask?, error: Error) in
+                failure(error)
+        })
+    }
 }
+
+
+

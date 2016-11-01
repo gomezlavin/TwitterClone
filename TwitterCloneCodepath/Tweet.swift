@@ -9,6 +9,7 @@
 import UIKit
 
 class Tweet: NSObject {
+    var id: String?
     var text: String?
     var timestamp: Date?
     var retweetCount: Int = 0
@@ -21,6 +22,7 @@ class Tweet: NSObject {
     var retweeterName: String?
     
     init(dictionary: NSDictionary) {
+        id = dictionary["id_str"] as? String
         retweetCount = (dictionary["retweet_count"] as? Int) ?? 0
         favoritesCount = (dictionary["favorites_count"] as? Int) ?? 0
         let timestampString = dictionary["created_at"] as? String
@@ -34,12 +36,12 @@ class Tweet: NSObject {
         
         let userDictionary = dictionary["user"] as? NSDictionary
         var imageURLString = ""
-        if retweeted == false {
+        
+        if dictionary["retweeted_status"] == nil {
             text = dictionary["text"] as? String
             userName = userDictionary?["name"] as? String
             userHandle = userDictionary?["screen_name"] as? String
             imageURLString = userDictionary?["profile_image_url_https"] as! String
-            retweeterName = userDictionary?["name"] as? String
         } else {
             let retweetedStatus = dictionary["retweeted_status"] as? NSDictionary
             text = retweetedStatus?["text"] as? String

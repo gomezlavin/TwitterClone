@@ -25,22 +25,18 @@ class TweetCell: UITableViewCell {
             userImageView.setImageWith(tweet.userImageUrl!)
             userNameLabel.text = tweet.userName
             userHandleLabel.text = "@\(tweet.userHandle!)"
-//            tweetTimestampLabel = 
+            tweetTimestampLabel.text = formatDate(date: tweet.timestamp!)
             tweetTextLabel.text = tweet.text
             retweetsLabel.text = String(tweet.retweetCount)
             likesLabel.text = String(tweet.favoritesCount)
-            actionLabel.text = tweet.retweeterName
             
-            if tweet.favorited == true {
-                let fv = UIImage(named: "like.png")
-                actionImageView.image = fv
-                actionLabel.text = "\(tweet.retweeterName) liked this"
-            }
-            
-            if tweet.retweeted == true {
+            let retweeterName = tweet.retweeterName
+            if retweeterName != nil {
+                actionImageView.isHidden = false
+                actionLabel.isHidden = false
                 let rt = UIImage(named: "retweet.png")
                 actionImageView.image = rt
-                actionLabel.text = "\(tweet.retweeterName) Retweeted"
+                actionLabel.text = "\(tweet.retweeterName!) Retweeted"
             }
         }
     }
@@ -56,7 +52,19 @@ class TweetCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = .none
+        self.selectedBackgroundView = backgroundView
+    }
+    
+    func formatDate(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d"
+        let dateStr = formatter.string(from: date)
+        
+        return dateStr
     }
 
 }
+
+
