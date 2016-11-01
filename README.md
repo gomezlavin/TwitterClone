@@ -44,7 +44,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-I thought this was going to take less hours than the Yelp project, but it took me more hours. If I had planned my time better I would have gone through all the optionals.  It's been my favorite assignmente so far.
+I thought this was going to take less hours than the Yelp project, but it took me more hours. If I had planned my time better I would have gone through all the optionals.  It's been my favorite assignment so far.
 
 ## License
 
